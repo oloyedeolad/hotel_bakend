@@ -2,6 +2,7 @@ const  express = require('express');
 const firebase = require('firebase');
 const config = require('./config');
 const bodyParser = require('body-parser');
+require('./dbconnect');
 const cors = require('cors');
 require('firebase/auth');
 require('firebase/database');
@@ -16,6 +17,7 @@ const port = process.env.port || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
 /*app.use('/api/auth', auth);*/
 app.use('/api/auth', firebaseAuth);
 
