@@ -1,5 +1,6 @@
 const bookshelf = require('../db/bookshelf');
 const Movement = require('movement');
+const SimBooking = require('sim_booking');
 
 
 // Defining models
@@ -8,6 +9,10 @@ const User = bookshelf.model('User', {
 
     movement(){
         return this.hasMany(Movement)
+    },
+
+    simBooking() {
+        return this.hasMany(SimBooking);
     },
 
     initialize() {
