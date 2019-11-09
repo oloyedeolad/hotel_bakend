@@ -2,7 +2,7 @@ const  express = require('express');
 const firebase = require('firebase');
 const config = require('./config');
 const bodyParser = require('body-parser');
-require('./dbconnect');
+require('./config/dbconnect');
 const cors = require('cors');
 require('firebase/auth');
 require('firebase/database');
