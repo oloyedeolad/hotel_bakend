@@ -1,8 +1,8 @@
 const bookshelf = require('../db/bookshelf');
-const Transport_Partner = require('transport_partner');
-const Location = require('location');
-const User = require('user');
-const TransportType = require('transport_type');
+const Transport_Partner = require('./transport_partner');
+const Location = require('./location');
+const User = require('./user');
+const TransportType = require('./transport_type');
 
 const Movement = bookshelf.model('Movement', {
     tableName: 'movement',

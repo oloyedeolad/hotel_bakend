@@ -1,6 +1,6 @@
 const bookshelf = require('../db/bookshelf');
-const User = require('user');
-const Sim = require('sim');
+const User = require('./user');
+const Sim = require('./sim');
 
 const SimBooking = bookshelf.model('SimBooking', {
     tableName: 'sim_bookings',

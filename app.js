@@ -6,6 +6,8 @@ require('./config/dbconnect');
 const cors = require('cors');
 require('firebase/auth');
 require('firebase/database');
+const userRoutes = require('./routes/userroutes');
+
 /*const auth = require('./auth');*/
 const firebaseAuth = require('./FirebaseAuth');
 
@@ -17,6 +19,9 @@ const port = process.env.port || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+//routes
+app.use('/user', userRoutes);
 
 /*app.use('/api/auth', auth);*/
 app.use('/api/auth', firebaseAuth);
