@@ -20,10 +20,19 @@ exports.create_airport =  function (req, res) {
 exports.get_all_airports = function (req, res) {
     Airport.fetchAll()
         .then((airports) => {
-            return res.status(200).send(airports)
+            return res.status(200).send(airports);
         }).catch((error) => {
         return res.status(400).send(error);
     })
 };
 
 
+exports.get_one_airport = function (req, res) {
+    new  Airport({id: req.params.id})
+        .fetch()
+        .then((airport)=>{
+            return res.status(200).send(airports);
+        })
+        .catch((error) => {
+            return res.status(400).send(error);
+}
