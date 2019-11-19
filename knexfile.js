@@ -33,7 +33,7 @@ module.exports = {
             directory: __dirname + '/db/seeds'
         }
     },
-    development: {
+    production: {
         client: 'mysql',
         connection: {
             host: 'gtizpe105piw2gfq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
