@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const User = require('../models/user').User;
+const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const Joi = require('joi');
 const jwt = require('jsonwebtoken');
