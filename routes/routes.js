@@ -8,5 +8,5 @@ module.exports = function (app) {
     app.use(express.json());
     app.use('/api/user', userRoutes);
     app.use('/api/airport', airportRoutes);
-}
+};
 
