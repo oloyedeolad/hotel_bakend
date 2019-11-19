@@ -35,4 +35,5 @@ exports.get_one_airport = function (req, res) {
         })
         .catch((error) => {
             return res.status(400).send(error);
+        });
 }
