@@ -1,5 +1,5 @@
 const bookshelf = require('../db/bookshelf');
-const Airport = require('airport');
+const Airport = require('./airport');
 
 const AirportPartner = bookshelf.model('AirportPartner', {
     tableName: 'airport_partner',

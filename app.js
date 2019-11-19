@@ -24,14 +24,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('tiny'));
 
 //routes
-app.use('/user', userRoutes);
+require('./routes/routes')(app);
 
 /*app.use('/api/auth', auth);*/
 app.use('/api/auth', firebaseAuth);
 
 
-app.listen(port, () => {
+ const server = app.listen(port, () => {
     console.log('listening on ' + port);
 });
 
-
+module.exports = server;

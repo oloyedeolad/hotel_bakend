@@ -1,7 +1,12 @@
 const  express = require('express');
 const userRoutes = require('./userroutes');
-const app = express();
+const airportRoutes = require('./airport_routes');
 
 
-app.use('/user', userRoutes);
+
+module.exports = function (app) {
+    app.use(express.json());
+    app.use('/api/user', userRoutes);
+    app.use('/api/airport', airportRoutes);
+}
 
