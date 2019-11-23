@@ -18,3 +18,10 @@ exports.get_one_airport = function (req, res) {
     .then((airport) => res.status(200).send(airport))
     .catch((error) => res.status(400).send(error));
 };
+
+exports.update_airport = function (req, res) {
+  new Airport({ id: req.params.id }).fetch()
+    .then((airport) => airport.save(req.body).then((saved) => res.status(200).send(saved))
+      .catch((error) => res.status(400).send(error)))
+    .catch((error) => res.status(400).send(error));
+};
