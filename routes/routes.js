@@ -6,6 +6,8 @@ const airportPartner = require('./airport_partner_route');
 const transportType = require('./transport_type_routes');
 const movement = require('./movement_routes');
 const sim = require('./sim_routes');
+const simBooking = require('./sim_routes');
+const airportPartnerService = require('./airport_partner_services_routes');
 
 
 
@@ -17,6 +19,8 @@ module.exports = function (app) {
     app.use('/api/airport_partner', airportPartner);
     app.use('/api/transport_type', transportType);
     app.use('/api/movement', movement);
-    app.use('/api/movement', sim);
+    app.use('/api/sim', sim);
+    app.use('/api/simBooking', simBooking);
+    app.use('/api/airport_partner_service', airportPartnerService);
 };
 
