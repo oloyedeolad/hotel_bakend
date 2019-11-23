@@ -1,38 +1,20 @@
-const _ = require('lodash');
-const Airport = require('../models/airport').Airport;
-const Joi = require('joi');
-const config = require('config');
+const { Airport } = require('../models/airport');
 
 
-
-
-//create Hotel
-exports.create_airport =  function (req, res) {
-    Airport.forge(req.body).save()
-        .then((user) => {
-            return res.status(200).send(user)
-        })
-        .catch((error) =>{
-            return res.status(400).send(error);
-        });
+exports.create_airport = function (req, res) {
+  Airport.forge(req.body).save()
+    .then((user) => res.status(200).send(user))
+    .catch((error) => res.status(400).send(error));
 };
 
 exports.get_all_airports = function (req, res) {
-    Airport.fetchAll()
-        .then((airports) => {
-            return res.status(200).send(airports);
-        }).catch((error) => {
-        return res.status(400).send(error);
-    })
+  Airport.fetchAll()
+    .then((airports) => res.status(200).send(airports)).catch((error) => res.status(400).send(error));
 };
 
 
 exports.get_one_airport = function (req, res) {
-    new  Airport({id: req.params.id}).fetch()
-        .then((airport) => {
-            return res.status(200).send(airport);
-        })
-        .catch((error) => {
-            return res.status(400).send(error);
-        })
+  new Airport({ id: req.params.id }).fetch()
+    .then((airport) => res.status(200).send(airport))
+    .catch((error) => res.status(400).send(error));
 };
